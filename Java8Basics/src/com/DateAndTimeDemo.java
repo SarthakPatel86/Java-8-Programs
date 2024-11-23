@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.Date;
 
 public class DateAndTimeDemo {
@@ -47,18 +48,22 @@ public class DateAndTimeDemo {
 //		System.out.println(l2);
 //		System.out.println(l2.getYear());
 
-		
-		LocalTime t1=LocalTime.now();
-		System.out.println(t1);
-		System.out.println(t1.getHour());
-		System.out.println(t1.getMinute());
-		System.out.println(t1.getSecond());
-		System.out.println(t1.getNano());
-		
-		System.out.println(t1.plusHours(2));
-		System.out.println(t1.minusHours(5));
-		System.out.println(t1.of(2, 15));
-		
-				
+//		LocalTime t1 = LocalTime.now();
+//		System.out.println(t1);
+//		System.out.println(t1.getHour());
+//		System.out.println(t1.getMinute());
+//		System.out.println(t1.getSecond());
+//		System.out.println(t1.getNano());
+//
+//		System.out.println(t1.plusHours(2));
+//		System.out.println(t1.minusHours(5));
+//		System.out.println(t1.of(2, 15));
+//
+//		LocalDateTime lt = LocalDateTime.now();
+//		System.out.println(lt.getDayOfMonth());
+
+		ZoneId.getAvailableZoneIds().stream().forEach(ele -> System.out.println(ele));
+		LocalDateTime lt = LocalDateTime.now();
+		System.out.println(lt.atZone(ZoneId.of("Australia/Sydney")));
 	}
 }
